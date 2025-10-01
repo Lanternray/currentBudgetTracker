@@ -5,7 +5,7 @@ const list = document.querySelector("ul");
 
 document.getElementById("inputCurrentBtn").addEventListener("click", () => {
     currentValue = Number(inputCurrent.value);
-    document.getElementById("current").textContent = `Current: ${currentValue}`;
+    document.getElementById("current").textContent = `Current: ${currentValue.toFixed(2)}`;
     });
 
 document.getElementById("addListBtn").addEventListener("click", () => {
@@ -23,13 +23,12 @@ document.getElementById("addListBtn").addEventListener("click", () => {
     list.appendChild(listItem);
     
     currentValue += itemAmount;
-    console.log(typeof(currentValue));
-    document.getElementById("current").textContent = `Current: ${currentValue}`;
+    document.getElementById("current").textContent = `Current: ${currentValue.toFixed(2)}`;
 
     listBtn.addEventListener("click", () => {
       list.removeChild(listItem);
       currentValue -= itemAmount;
-      document.getElementById("current").textContent = `Current: ${currentValue}`;
+      document.getElementById("current").textContent = `Current: ${currentValue.toFixed(2)}`;
     });
 
     });
