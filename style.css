@@ -4,7 +4,7 @@
     color: rgb(216, 142, 13);
 }
 
-.current {
+#current {
     border: 1px solid black;
     width: 200px;
     padding: 1rem;
@@ -13,20 +13,27 @@
     margin-bottom: 4px;
 }
 
-#inputCurrentBtn {
+#inputCurrentBtn, #addListBtn {
     padding: 4px;
     border-radius: 8px;
     background-color: rgb(85,85,85);
     margin-bottom: 1rem;
+    width: 100px;
 }
 
-#inputCurrent {
+input {
     background-color: rgb(155, 155, 155);
-    width: 130px;
+    width: 120px;
 }
 
 ul {
     list-style: none;
     padding-left: 4px;
     font-size: 14px;
+}
+
+li button {
+  font-size: 12px;
+  margin-left: 12px;
+  border-radius: 8px;
 }
