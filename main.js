@@ -17,7 +17,7 @@ document.getElementById("addListBtn").addEventListener("click", () => {
     const listBtn = document.createElement("button");
 
     listItem.appendChild(listText);
-    listText.textContent = `${itemDescrip} ${itemAmount}`;
+    listText.textContent = `${itemDescrip} ${itemAmount.toFixed(2)}`;
     listItem.appendChild(listBtn);
     listBtn.textContent = "Delete";
     list.appendChild(listItem);
