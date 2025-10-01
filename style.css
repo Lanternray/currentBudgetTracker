@@ -24,6 +24,7 @@
 input {
     background-color: rgb(155, 155, 155);
     width: 120px;
+    color: rgb(70,70,70);
 }
 
 ul {
