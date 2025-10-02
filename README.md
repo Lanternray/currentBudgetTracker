@@ -7,4 +7,7 @@ Update-1.0
 Update-2.0
 - Adding alert prompt before setting "current", to prevent overwrite.
 
+Update-2.1
+- Adding styling to prompt
+
 -->
