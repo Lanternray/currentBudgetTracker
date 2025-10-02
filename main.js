@@ -79,10 +79,41 @@ function addListItem(itemDescrip, itemAmount, updateValue = true) {
   });
 }
 
+const customPrompt = document.getElementById("customPrompt");
+const confirmYes = document.getElementById("confirmYes");
+const confirmNo = document.getElementById("confirmNo");
+
+let pendingAction = null;
+
+function showPrompt(actionFn) {
+  pendingAction = actionFn;
+  customPrompt.classList.remove("hidden");
+  customPrompt.setAttribute("aria-hidden", "false");
+}
+
+function hidePrompt() {
+  pendingAction = null;
+  customPrompt.classList.add("hidden");
+  customPrompt.setAttribute("aria-hidden", "true");
+}
+
+confirmYes.addEventListener("click", () => {
+  if (typeof pendingAction === "function") pendingAction();
+  hidePrompt();
+});
+
+confirmNo.addEventListener("click", hidePrompt);
+
+customPrompt.addEventListener("click", (e) => {
+  if (e.target === customPrompt) hidePrompt();
+});
+
 document.getElementById("inputCurrentBtn").addEventListener("click", () => {
-  currentValue = Number(inputCurrent.value);
-  current.textContent = `Current: ${currentValue.toFixed(2)}`;
-  saveState();
+  showPrompt(() => {
+    currentValue = Number(inputCurrent.value);
+    current.textContent = `Current: ${currentValue.toFixed(2)}`;
+    saveState();
+  });
 });
 
 document.getElementById("addListBtn").addEventListener("click", () => {

@@ -86,3 +86,11 @@ li button {
     font-size: 14px;
     color: rgb(85,85,85);
 }
+
+/* modal styling */
+.custom-prompt { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+                 background: rgba(0,0,0,0.5); z-index: 1000; }
+.custom-prompt.hidden { display: none; }
+.custom-prompt__box { background: #fff; padding: 18px; border-radius: 8px; max-width: 320px; text-align: center;
+                      box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+.custom-prompt__actions { margin-top: 12px; display: flex; gap: 8px; justify-content: center; }
