@@ -58,10 +58,10 @@ function addListItem(itemDescrip, itemAmount, updateValue = true) {
   const listText = document.createElement("span");
   const listBtn = document.createElement("button");
 
-  listItem.appendChild(listText);
-  listText.textContent = `${itemDescrip} ${itemAmount.toFixed(2)}`;
   listItem.appendChild(listBtn);
   listBtn.textContent = "Delete";
+  listItem.appendChild(listText);
+  listText.textContent = `${itemDescrip} ${itemAmount.toFixed(2)}`;
   list.appendChild(listItem);
 
   if (updateValue) {
