@@ -5,12 +5,23 @@
 body {
     background-color: rgb(40, 40, 40);
     color: rgb(13, 118, 216);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    height: 60px;
+}
+
+.header img {
+    border-radius: 10px;
 }
 
 .top-section {
     border: 1px solid rgb(60, 60, 60);
     border-radius: 8px;
-    width: 500px;
+    width: 492px;
     padding: 8px 0 0 8px;
 }   
 
@@ -66,4 +77,11 @@ li button {
     padding-top: 2px;
     width: 500px;
     min-height: 150px;
+}
+
+.footer {
+    margin-top: auto;
+    font-size: 14px;
+    color: rgb(85,85,85);
+    margin-bottom: 10px;
 }
