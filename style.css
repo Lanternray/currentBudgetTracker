@@ -8,6 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    max-width: fit-content;
 }
 
 .header {
@@ -21,7 +22,8 @@ body {
 .top-section {
     border: 1px solid rgb(60, 60, 60);
     border-radius: 8px;
-    width: 492px;
+    max-width: 492px;
+    width: 100%;
     padding: 8px 0 0 8px;
 }   
 
@@ -73,9 +75,9 @@ li button {
     border: solid 1px rgb(0, 85, 212);
     color: rgb(155, 155, 155);
     border-radius: 8px;
-    padding-bottom: 4px;
-    padding-top: 2px;
-    width: 500px;
+    padding: 8px 0 0 8px;
+    max-width: 500px;
+    width: 100%;
     min-height: 150px;
 }
 
@@ -83,5 +85,4 @@ li button {
     margin-top: auto;
     font-size: 14px;
     color: rgb(85,85,85);
-    margin-bottom: 10px;
 }
