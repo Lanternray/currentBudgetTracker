@@ -1,4 +1,4 @@
-// ---- Helpers for cookies ----
+// ---- Helper for cookies ----
 function setCookie(name, value, days = 7) {
   const d = new Date();
   d.setTime(d.getTime() + (days*24*60*60*1000));
