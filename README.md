@@ -10,4 +10,7 @@ Update-2.0
 Update-2.1
 - Adding styling to prompt
 
+Update-1.1
+- Fixing layout design. Particularly in mobile. Footer is stretching too far down. Horizontal, there's no padding.
+
 -->

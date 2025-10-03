@@ -85,16 +85,22 @@ li button {
     border: solid 1px rgb(0, 85, 212);
     color: rgb(155, 155, 155);
     border-radius: 8px;
-    padding: 8px 0 0 8px;
+    padding: 8px 0 8px 8px;
     max-width: 500px;
     width: 100%;
     min-height: 150px;
 }
 
+.history p {
+    padding-bottom: 8px;
+}
+
 .footer {
-    margin-top: auto;
     font-size: 14px;
     color: rgb(85,85,85);
+    min-height: 2rem;
+    align-content: center;
+    margin-top: 2rem;
 }
 
 /* modal styling */
