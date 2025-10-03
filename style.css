@@ -8,7 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    max-width: fit-content;
+    max-width: 90vh;
 }
 
 .header {
@@ -30,10 +30,15 @@ body {
 #current {
     padding-bottom: 4px;
     width: 200px;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
     border-radius: 8px;
     margin-bottom: 4px;
+}
+
+.entry {
+    width: 100%;
+    padding-left: 8px;
 }
 
 #inputCurrentBtn, #addListBtn {
@@ -41,7 +46,7 @@ body {
     border-radius: 8px;
     background-color: rgb(85,85,85);
     margin-bottom: 1rem;
-    width: 100px;
+    width: 85px;
     color: aliceblue;
     border: none;
     background-color: rgb(0, 85, 212);
@@ -49,11 +54,12 @@ body {
 
 input {
     background-color: rgb(155, 155, 155);
-    width: 120px;
+    width: 100px;
     color: rgb(70,70,70);
-    border-radius: 6px;
+    border-radius: 10px;
     border: none;
     height: 20px;
+    padding-left: 8px;
 }
 
 ul {
