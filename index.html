@@ -6,43 +6,51 @@
     <link rel="stylesheet" href="style.css">
     <title>Current Budget Tracker</title>
 </head>
+
 <body>
     
     <div class="header">
         <img src="images/logo.png" alt="logo" >
     </div>
+    <hr>
 
-    <div class="top-section">
-        <div id="current">Current: </div>
-        <button id="inputCurrentBtn">Set Current</button>
-        <input type="number" id="inputCurrent">
-    </div>
+    <div class="main">
 
-    <br>
-    <div class="entry">
-        <button id="addListBtn">Add Entry</button>
-        <input type="text" id="inputDescrip" placeholder="description">
-        <input type="number" id="inputAmount" placeholder="amount">
-    </div>
-
-    <div class="history">
-        <ul class="list">
-            <p><strong>History</strong></p>
-        </ul>
-    </div>
-
-    <script src="main.js" defer></script>
-
-    <div id="customPrompt" class="custom-prompt hidden" aria-hidden="true">
-      <div class="custom-prompt__box" role="dialog" aria-modal="true" aria-labelledby="customPromptTitle">
-        <p id="customPromptTitle">Are you sure you want to update the current value?</p>
-        <div class="custom-prompt__actions">
-          <button id="confirmYes">Continue</button>
-          <button id="confirmNo">Cancel</button>
+        <div class="top-section">
+            <div id="current">Current: </div>
+            <button id="inputCurrentBtn">Set Current</button>
+            <input type="number" id="inputCurrent">
         </div>
-      </div>
+
+        <br>
+        <div class="entry">
+            <button id="addListBtn">Add Entry</button>
+            <input type="text" id="inputDescrip" placeholder="description">
+            <input type="number" id="inputAmount" placeholder="amount">
+        </div>
+
+        <div class="history">
+            <ul class="list">
+                <p><strong>History</strong></p>
+            </ul>
+        </div>
+
+        <script src="main.js" defer></script>
+
+        <div id="customPrompt" class="custom-prompt hidden" aria-hidden="true">
+          <div class="custom-prompt__box" role="dialog" aria-modal="true" aria-labelledby="customPromptTitle">
+            <p id="customPromptTitle">Are you sure you want to update the current value?</p>
+            <div class="custom-prompt__actions">
+              <button id="confirmYes">Continue</button>
+              <button id="confirmNo">Cancel</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">&copy 2025 Shane Raweewonrungjumrus</div>
+
     </div>
 
-    <div class="footer">&copy 2025 Shane Raweewonrungjumrus</div>
 </body>
+
 </html>

@@ -13,4 +13,7 @@ Update-2.1
 Update-1.1
 - Fixing layout design. Particularly in mobile. Footer is stretching too far down. Horizontal, there's no padding.
 
+Update-1.2
+- Centering layout, tweaking colors for readabiility.
+
 -->
