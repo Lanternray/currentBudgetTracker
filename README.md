@@ -19,4 +19,10 @@ Update-1.2
 Update-3.0
 - Adding logic when setting "current" to clear list items.
 
+Update-4.0
+- Intuitive Design Changes
+- Add a small drop-down which has option to display "how to use" page.
+- Change fields to make the values more intuitive in their purpose or what it represents.
+- Check colors for iOS browsers/devices (Tara's macbook, the description/amount fields were very white)
+
 -->
