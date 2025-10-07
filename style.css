@@ -76,11 +76,11 @@ hr {
 .hidden-menu {
     background-color: rgb(70,70,70);
     color: rgb(92, 163, 229);
-    padding: 4px 0 0 6px;
-    height: 400px;
+    padding: 4px 2px 4px 6px;
+    height: auto;
     width: 500px;
     max-width: 90%;
-    position: fixed;
+    position: absolute;
     top: 64px;
     right: -550px;
     display: flex;
