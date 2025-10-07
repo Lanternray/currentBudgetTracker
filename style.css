@@ -6,6 +6,8 @@
 
 html {
     background-color: rgb(40, 40, 40);
+    display: flex;
+    justify-content: center;
 }
 
 hr {
@@ -13,6 +15,10 @@ hr {
     width: 100%;
     margin: 0;
     padding: 0;
+}
+
+body {
+    width: 850px;
 }
 
 .main {
