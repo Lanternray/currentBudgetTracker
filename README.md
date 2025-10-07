@@ -16,4 +16,7 @@ Update-1.1
 Update-1.2
 - Centering layout, tweaking colors for readabiility.
 
+Update-3.0
+- Adding logic when setting "current" to clear list items.
+
 -->
