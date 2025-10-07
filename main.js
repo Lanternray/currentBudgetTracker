@@ -97,6 +97,11 @@ function hidePrompt() {
   customPrompt.setAttribute("aria-hidden", "true");
 }
 
+function clearList() {
+  list.innerHTML = "";
+  saveState();
+}
+
 confirmYes.addEventListener("click", () => {
   if (typeof pendingAction === "function") pendingAction();
   hidePrompt();
@@ -112,7 +117,7 @@ document.getElementById("inputCurrentBtn").addEventListener("click", () => {
   showPrompt(() => {
     currentValue = Number(inputCurrent.value);
     current.textContent = `Current: ${currentValue.toFixed(2)}`;
-    saveState();
+    clearList();
   });
 });
 

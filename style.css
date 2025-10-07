@@ -35,17 +35,22 @@ hr {
     border-radius: 8px;
     max-width: 500px;
     width: 100%;
-    padding: 8px 0 0 8px;
+    padding: 8px 0 4px 8px;
 }   
 
 #current {
     padding-bottom: 4px;
-    width: 200px;
+    width: 350px;
     font-size: 22px;
     font-weight: bold;
     border-radius: 8px;
     margin-bottom: 4px;
     color:rgb(200, 228, 255);
+}
+
+.top-section p {
+    color: rgb(115,115,115);
+    font-size: 12px;
 }
 
 .entry {
@@ -58,7 +63,7 @@ hr {
     border-radius: 8px;
     background-color: rgb(85,85,85);
     margin-bottom: 1rem;
-    width: 85px;
+    width: 90px;
     color: aliceblue;
     border: none;
     background-color: rgb(0, 85, 212);
@@ -98,6 +103,7 @@ li button {
     max-width: 500px;
     width: 100%;
     min-height: 150px;
+    margin-top: 4px;
 }
 
 .history p {
