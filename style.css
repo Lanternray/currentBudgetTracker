@@ -201,6 +201,11 @@ li button {
     margin-top: 2rem;
 }
 
+.footer a {
+    color: rgb(85,85,85);
+    font-style: italic;
+}
+
 /* modal styling */
 .custom-prompt { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); z-index: 1000; }
 .custom-prompt.hidden { display: none; }
