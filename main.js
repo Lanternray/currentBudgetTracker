@@ -1,4 +1,4 @@
-// ---- Helper for cookies ----
+//helper for cookies
 function setCookie(name, value, days = 7) {
   const d = new Date();
   d.setTime(d.getTime() + (days*24*60*60*1000));
@@ -24,7 +24,7 @@ let inputDescrip = document.getElementById("inputDescrip");
 let inputAmount = document.getElementById("inputAmount");
 const list = document.querySelector("ul");
 
-// ---- Load state from cookies on refresh ----
+//load cookies state
 window.addEventListener("load", () => {
   const savedValue = getCookie("currentValue");
   const savedList = getCookie("listItems");
@@ -40,7 +40,7 @@ window.addEventListener("load", () => {
   }
 });
 
-// ---- Save state to cookies ----
+//save cookies state
 function saveState() {
   setCookie("currentValue", currentValue, 7);
   const items = [];
