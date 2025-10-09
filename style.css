@@ -86,9 +86,10 @@ body, html {
 }
 
 .hidden-menu {
-    background-color: rgb(70,70,70);
+    background-color: rgba(70, 70, 70, 0.014);
+    backdrop-filter: blur(40px);
     color: rgb(92, 163, 229);
-    padding: 4px 2px 4px 6px;
+    padding: 4px 2px 4px 10px;
     height: auto;
     width: 500px;
     max-width: 90%;
@@ -107,6 +108,11 @@ body, html {
 .hidden-menu p {
     color: rgb(200, 228, 255);
     font-size: 14px;
+}
+
+.hidden-menu img {
+    padding-top: 4px;
+    border-radius: 10px;
 }
 
 .hidden-menu.active {
