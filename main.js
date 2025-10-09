@@ -72,10 +72,18 @@ function addListItem(itemDescrip, itemAmount, updateValue = true) {
   saveState();
 
   listBtn.addEventListener("click", () => {
-    list.removeChild(listItem);
-    currentValue -= itemAmount;
-    current.textContent = `Current: ${currentValue.toFixed(2)}`;
-    saveState();
+    const promptTitle = document.getElementById("customPromptTitle");
+    const originalPromptText = "Are you sure you want to update the current value?";
+    promptTitle.textContent = `Remove "${itemDescrip}" from the list?`;
+
+    showPrompt(() => {
+      list.removeChild(listItem);
+      currentValue -= itemAmount;
+      current.textContent = `Current: ${currentValue.toFixed(2)}`;
+      saveState();
+
+      promptTitle.textContent = originalPromptText;
+    });
   });
 }
 
