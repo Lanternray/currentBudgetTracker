@@ -129,11 +129,27 @@ document.getElementById("inputCurrentBtn").addEventListener("click", () => {
   });
 });
 
-document.getElementById("addListBtn").addEventListener("click", () => {
+inputCurrent.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    showPrompt(() => {
+      currentValue = Number(inputCurrent.value);
+      current.textContent = `Current: ${currentValue.toFixed(2)}`;
+      clearList();
+    });
+  }
+});
+
+function handleAddList() {
   const itemDescrip = inputDescrip.value;
   const itemAmount = Number(inputAmount.value);
   if (!itemDescrip || isNaN(itemAmount)) return;
   addListItem(itemDescrip, itemAmount);
+}
+
+document.getElementById("addListBtn").addEventListener("click", handleAddList);
+
+inputAmount.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") handleAddList();
 });
 
 const menu = document.querySelector('.menu');
