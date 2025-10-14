@@ -28,4 +28,6 @@ Update-4.0
 Defect Identified 001
 Workflow: When adding a list item, then attempt to "delete" the item - but press "cancel". When you try to set "start value" again, it retains the previous prompt before the cancel. Although - pressing "continue" still results in the expected function when setting the new start value.
 
+2025/10/14 14:35 Fixed defect-001
+
 -->
