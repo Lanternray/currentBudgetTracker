@@ -25,7 +25,7 @@ Update-4.0
 - Change fields to make the values more intuitive in their purpose or what it represents.
 - Check colors for iOS browsers/devices (Tara's macbook, the description/amount fields were very white)
 
-Defect Identified
+Defect Identified 001
 Workflow: When adding a list item, then attempt to "delete" the item - but press "cancel". When you try to set "start value" again, it retains the previous prompt before the cancel. Although - pressing "continue" still results in the expected function when setting the new start value.
 
 -->

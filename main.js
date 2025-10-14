@@ -71,6 +71,9 @@ inputCurrent.addEventListener("keypress", (e) => {
   }
 });
 
+const promptTitle = document.getElementById("customPromptTitle");
+const originalPromptText = "Are you sure you want to update the current value?";
+
 function addListItem(itemDescrip, itemAmount, updateValue = true) {
   const listItem = document.createElement("li");
   const listText = document.createElement("span");
@@ -90,8 +93,6 @@ function addListItem(itemDescrip, itemAmount, updateValue = true) {
   saveState();
 
   listBtn.addEventListener("click", () => {
-    const promptTitle = document.getElementById("customPromptTitle");
-    const originalPromptText = "Are you sure you want to update the current value?";
     promptTitle.textContent = `Remove "${itemDescrip}" from the list?`;
 
     showPrompt(() => {
@@ -133,10 +134,16 @@ confirmYes.addEventListener("click", () => {
   hidePrompt();
 });
 
-confirmNo.addEventListener("click", hidePrompt);
+confirmNo.addEventListener("click", () => {
+  promptTitle.textContent = originalPromptText;
+  hidePrompt();
+});
 
 customPrompt.addEventListener("click", (e) => {
-  if (e.target === customPrompt) hidePrompt();
+  if (e.target === customPrompt) {
+    promptTitle.textContent = originalPromptText;
+    hidePrompt();
+  }
 });
 
 function handleAddList() {
