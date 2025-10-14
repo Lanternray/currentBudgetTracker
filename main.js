@@ -53,6 +53,24 @@ function saveState() {
   setCookie("listItems", JSON.stringify(items), 7);
 }
 
+document.getElementById("inputCurrentBtn").addEventListener("click", () => {
+  showPrompt(() => {
+    currentValue = Number(inputCurrent.value);
+    current.textContent = `Current: ${currentValue.toFixed(2)}`;
+    clearList();
+  });
+});
+
+inputCurrent.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    showPrompt(() => {
+      currentValue = Number(inputCurrent.value);
+      current.textContent = `Current: ${currentValue.toFixed(2)}`;
+      clearList();
+    });
+  }
+});
+
 function addListItem(itemDescrip, itemAmount, updateValue = true) {
   const listItem = document.createElement("li");
   const listText = document.createElement("span");
@@ -119,24 +137,6 @@ confirmNo.addEventListener("click", hidePrompt);
 
 customPrompt.addEventListener("click", (e) => {
   if (e.target === customPrompt) hidePrompt();
-});
-
-document.getElementById("inputCurrentBtn").addEventListener("click", () => {
-  showPrompt(() => {
-    currentValue = Number(inputCurrent.value);
-    current.textContent = `Current: ${currentValue.toFixed(2)}`;
-    clearList();
-  });
-});
-
-inputCurrent.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") {
-    showPrompt(() => {
-      currentValue = Number(inputCurrent.value);
-      current.textContent = `Current: ${currentValue.toFixed(2)}`;
-      clearList();
-    });
-  }
 });
 
 function handleAddList() {
