@@ -5,7 +5,8 @@
 }
 
 html {
-    background-color: rgb(40, 40, 40);
+    background-image: -webkit-linear-gradient(hsl(0, 0%, 16%), hsl(80 , 60%, 2%));
+    background-image: linear-gradient(hsl(0, 0%, 16%), hsl(80 , 60%, 2%));
     display: flex;
     justify-content: center;
 }
