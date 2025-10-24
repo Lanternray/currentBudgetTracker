@@ -5,6 +5,7 @@
 }
 
 html {
+    background-color: hsl(0, 0%, 16%);
     background-image: -webkit-linear-gradient(hsl(0, 0%, 16%), hsl(0, 0%, 5%));
     background-image: linear-gradient(hsl(0, 0%, 16%), hsl(0, 0%, 5%));
     display: flex;
