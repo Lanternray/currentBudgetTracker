@@ -171,6 +171,7 @@ input {
     border: 1px solid rgb(200, 228, 255);
     height: 22px;
     padding-left: 8px;
+    border-radius: 4px;
 }
 
 ul {
