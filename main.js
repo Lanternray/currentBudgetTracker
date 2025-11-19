@@ -77,10 +77,24 @@ const originalPromptText = "Are you sure you want to update the current value?";
 function addListItem(itemDescrip, itemAmount, updateValue = true) {
   const listItem = document.createElement("li");
   const listText = document.createElement("span");
-  const listBtn = document.createElement("button");
 
-  listItem.appendChild(listBtn);
-  listBtn.textContent = "x";
+  const removeBtn = document.createElement("button");
+  const icon = document.createElement("img");
+  icon.src = "icons/remove.svg";
+  icon.alt = "Remove";
+  icon.style.width = "14px";
+  icon.style.height = "14px";
+  icon.style.verticalAlign = "middle";
+
+  // Add image to button
+  removeBtn.appendChild(icon);
+  removeBtn.style.backgroundColor = "hsla(0, 0%, 0%, 0.00)";
+  removeBtn.style.color = "white";
+  removeBtn.style.border = "none";
+  removeBtn.style.padding = "4px";
+  removeBtn.style.cursor = "pointer";
+
+  listItem.appendChild(removeBtn);
   listItem.appendChild(listText);
   listText.textContent = `${itemDescrip} ${itemAmount.toFixed(2)}`;
   list.appendChild(listItem);
@@ -92,7 +106,7 @@ function addListItem(itemDescrip, itemAmount, updateValue = true) {
 
   saveState();
 
-  listBtn.addEventListener("click", () => {
+  removeBtn.addEventListener("click", () => {
     promptTitle.textContent = `Remove "${itemDescrip}" from the list?`;
 
     showPrompt(() => {
