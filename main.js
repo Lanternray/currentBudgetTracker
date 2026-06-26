@@ -53,12 +53,14 @@ function saveState() {
   setCookie("listItems", JSON.stringify(items), 7);
 }
 
-document.getElementById("inputCurrentBtn").addEventListener("click", () => {
+const inputCurrentBtn = document.getElementById("inputCurrentBtn");
+
+inputCurrentBtn.addEventListener("click", (e) => {
   showPrompt(() => {
     currentValue = Number(inputCurrent.value);
     current.textContent = `Current: ${currentValue.toFixed(2)}`;
     clearList();
-  });
+  }, e.currentTarget);
 });
 
 inputCurrent.addEventListener("keypress", (e) => {
@@ -67,7 +69,7 @@ inputCurrent.addEventListener("keypress", (e) => {
       currentValue = Number(inputCurrent.value);
       current.textContent = `Current: ${currentValue.toFixed(2)}`;
       clearList();
-    });
+    }, e.currentTarget);
   }
 });
 
@@ -106,7 +108,7 @@ function addListItem(itemDescrip, itemAmount, updateValue = true) {
 
   saveState();
 
-  removeBtn.addEventListener("click", () => {
+  removeBtn.addEventListener("click", (e) => {
     promptTitle.textContent = `Remove "${itemDescrip}" from the list?`;
 
     showPrompt(() => {
@@ -116,19 +118,52 @@ function addListItem(itemDescrip, itemAmount, updateValue = true) {
       saveState();
 
       promptTitle.textContent = originalPromptText;
-    });
+    }, e.currentTarget);
   });
 }
 
 const customPrompt = document.getElementById("customPrompt");
+const promptBox = customPrompt.querySelector(".custom-prompt__box");
 const confirmYes = document.getElementById("confirmYes");
 const confirmNo = document.getElementById("confirmNo");
 
 let pendingAction = null;
 
-function showPrompt(actionFn) {
+function positionPrompt(triggerEl) {
+  if (!triggerEl) {
+    customPrompt.style.setProperty("--custom-prompt-left", "50%");
+    customPrompt.style.setProperty("--custom-prompt-top", "50%");
+    return;
+  }
+
+  const promptRect = customPrompt.getBoundingClientRect();
+  const triggerRect = triggerEl.getBoundingClientRect();
+  const boxRect = promptBox.getBoundingClientRect();
+  const edgeGap = 12;
+
+  const minLeft = boxRect.width / 2 + edgeGap;
+  const maxLeft = promptRect.width - boxRect.width / 2 - edgeGap;
+  const minTop = boxRect.height / 2 + edgeGap;
+  const maxTop = promptRect.height - boxRect.height / 2 - edgeGap;
+
+  const triggerCenterLeft = triggerRect.left - promptRect.left + triggerRect.width / 2;
+  const triggerCenterTop = triggerRect.top - promptRect.top + triggerRect.height / 2;
+
+  const left = maxLeft < minLeft
+    ? promptRect.width / 2
+    : Math.min(Math.max(triggerCenterLeft, minLeft), maxLeft);
+  const top = maxTop < minTop
+    ? promptRect.height / 2
+    : Math.min(Math.max(triggerCenterTop, minTop), maxTop);
+
+  customPrompt.style.setProperty("--custom-prompt-left", `${left}px`);
+  customPrompt.style.setProperty("--custom-prompt-top", `${top}px`);
+}
+
+function showPrompt(actionFn, triggerEl) {
   pendingAction = actionFn;
   customPrompt.classList.remove("hidden");
+  positionPrompt(triggerEl);
   customPrompt.setAttribute("aria-hidden", "false");
 }
 
@@ -216,4 +251,3 @@ document.addEventListener('keydown', (e) => {
     closeHelpMenu();
   }
 });
-
