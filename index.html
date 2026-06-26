@@ -12,20 +12,22 @@
     <div class="header">
         <img src="images/logo.png" alt="logo" width="120px" height="44px">
 
-        <div class="menu">
+        <div class="menu" role="button" tabindex="0" aria-label="Open help" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </div>
     </div>
 
-    <div class="hidden-menu">
-        <h3>How to Use</h3><br>
-        <p>This budget tracker is intended to be a simple tool for managing finances. Use it to plan out your budget, or keep track of your spending as you go!</p><br>
-        <p><strong>Start Value</strong>: set the starting value for your budget.</p><br>
-        <p><strong>Add Entry</strong>: Enter "description" (<em>ex. 10/1 Mortgage</em>), and amount (<em>ex. -1500</em>)</p><br>
-        Example:
-        <img src="images/example.png" alt="example">
+    <div class="hidden-menu" aria-hidden="true">
+        <div class="hidden-menu__box" role="dialog" aria-modal="true" aria-labelledby="helpMenuTitle">
+            <h3 id="helpMenuTitle">How to Use</h3><br>
+            <p>This budget tracker is intended to be a simple tool for managing finances. Use it to plan out your budget, or keep track of your spending as you go!</p><br>
+            <p><strong>Start Value</strong>: set the starting value for your budget.</p><br>
+            <p><strong>Add Entry</strong>: Enter "description" (<em>ex. 10/1 Mortgage</em>), and amount (<em>ex. -1500</em>)</p><br>
+            Example:
+            <img src="images/example.png" alt="example">
+        </div>
     </div>
 
     <hr>

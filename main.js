@@ -176,8 +176,44 @@ inputAmount.addEventListener("keypress", (e) => {
 const menu = document.querySelector('.menu');
 const hiddenMenu = document.querySelector('.hidden-menu');
 
-menu.addEventListener('click', () => {
-  menu.classList.toggle('active');
-  hiddenMenu.classList.toggle('active');
+function openHelpMenu() {
+  menu.classList.add('active');
+  menu.setAttribute('aria-expanded', 'true');
+  hiddenMenu.classList.add('active');
+  hiddenMenu.setAttribute('aria-hidden', 'false');
+}
+
+function closeHelpMenu() {
+  menu.classList.remove('active');
+  menu.setAttribute('aria-expanded', 'false');
+  hiddenMenu.classList.remove('active');
+  hiddenMenu.setAttribute('aria-hidden', 'true');
+}
+
+function toggleHelpMenu() {
+  if (hiddenMenu.classList.contains('active')) {
+    closeHelpMenu();
+  } else {
+    openHelpMenu();
+  }
+}
+
+menu.addEventListener('click', toggleHelpMenu);
+
+menu.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    toggleHelpMenu();
+  }
+});
+
+hiddenMenu.addEventListener('click', (e) => {
+  if (e.target === hiddenMenu) closeHelpMenu();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && hiddenMenu.classList.contains('active')) {
+    closeHelpMenu();
+  }
 });
 
